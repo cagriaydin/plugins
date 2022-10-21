@@ -229,7 +229,7 @@ final class VideoPlayer {
           public void onPlayerError(final PlaybackException error) {
             setBuffering(false);
             if (eventSink != null) {
-              eventSink.error("VideoError", "Video player had error " + error, null);
+              eventSink.error("VideoError"+ error.errorCode.toString(), "Video player had error " + error, null);
             }
           }
         });
