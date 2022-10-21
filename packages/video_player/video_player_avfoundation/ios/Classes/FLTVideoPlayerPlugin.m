@@ -258,7 +258,7 @@ NS_INLINE CGFloat radiansToDegrees(CGFloat radians) {
         if (_eventSink != nil) {
           _eventSink([FlutterError
               errorWithCode: myErrorCode
-                    message:[@"Failed to load video: "
+                    message:[@"Failed to load videoo: "
                                 stringByAppendingString:[item.error localizedDescription]]
                     details:nil]);
         }
