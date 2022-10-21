@@ -252,11 +252,12 @@ NS_INLINE CGFloat radiansToDegrees(CGFloat radians) {
     }
   } else if (context == statusContext) {
     AVPlayerItem *item = (AVPlayerItem *)object;
+    NSString* myErrorCode = [NSString stringWithFormat:@"%ld", item.error.code];
     switch (item.status) {
       case AVPlayerItemStatusFailed:
         if (_eventSink != nil) {
           _eventSink([FlutterError
-              errorWithCode:@"VideoError"
+              errorWithCode: myErrorCode
                     message:[@"Failed to load video: "
                                 stringByAppendingString:[item.error localizedDescription]]
                     details:nil]);
